@@ -8,8 +8,7 @@ class MemberTest < MiniTest::Test
     options1 = {
       'member_name' => 'Joe Bloggs',
       'email' => 'jb@mail.com',
-      'member_since' => '01-03-2015',
-      'membership_type' => 'standard'
+      'premium_membership' => 'false'
     }
     @member1 = Member.new(options1)
   end
@@ -22,12 +21,13 @@ class MemberTest < MiniTest::Test
     assert_equal( 'jb@mail.com', @member1.email() )
   end
 
-  def test_member_has_member_since_data()
-    assert_equal( '01-03-2015', @member1.member_since() )
-  end
+  # removed this property - might add back in as date
+  # def test_member_has_member_since_data()
+  #   assert_equal( '01-03-2015', @member1.member_since() )
+  # end
 
   def test_member_has_type()
-    assert_equal( 'standard', @member1.membership_type() )
+    assert_equal( 'false', @member1.premium_membership() )
   end
 
 end

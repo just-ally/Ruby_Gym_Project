@@ -7,10 +7,10 @@ class GymClassTest < MiniTest::Test
   def setup
     options1 = {
       'workout_id' =>  '4',
-      'date' => '10-Dec-2018',
-      'time' => '19.00',
+      'start_date' => '10-Dec-2018',
+      'start_time' => '19.00',
       'capacity' => '5',
-      'peak' => 'peak'
+      'peak' => 'true'
     }
     @gymclass1 = GymClass.new(options1)
   end
@@ -20,11 +20,11 @@ class GymClassTest < MiniTest::Test
   end
 
   def test_gymclass_has_date()
-    assert_equal( '10-Dec-2018', @gymclass1.date() )
+    assert_equal( '10-Dec-2018', @gymclass1.start_date() )
   end
 
   def test_gymclass_has_time()
-    assert_equal( '19.00', @gymclass1.time() )
+    assert_equal( '19.00', @gymclass1.start_time() )
   end
 
   def test_gymclass_has_capacity()
@@ -32,7 +32,7 @@ class GymClassTest < MiniTest::Test
   end
 
   def test_gymclass_has_peak_value()
-    assert_equal( 'peak', @gymclass1.peak() )
+    assert_equal( 'true', @gymclass1.peak() )
   end
 
 
