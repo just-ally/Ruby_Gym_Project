@@ -5,6 +5,7 @@ require_relative('../models/workout.rb')
 require('pry')
 
 Member.delete_all()
+GymClass.delete_all()
 Workout.delete_all()
 
 member1 = Member.new({
@@ -28,12 +29,13 @@ workout1 = Workout.new({
 workout1.save()
 
 gymclass1 = GymClass.new({
-  'workout_id' =>  '4',
+  'workout_id' =>  workout1.id,
   'start_date' => '10-Dec-2018',
   'start_time' => '19.00',
   'capacity' => '5',
   'peak' => 'false'
 })
+gymclass1.save()
 
 booking1 = Booking.new({
   'member_id' => '4',
