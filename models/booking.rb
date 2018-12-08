@@ -81,5 +81,14 @@ class Booking
     return member
   end
 
+  #SHOW GYMCLASS
+  def gymclass()
+    sql = "SELECT * FROM gym_classes WHERE gym_classes.id = $1"
+    values = [@gym_class_id]
+    gymclass_data = SqlRunner.run(sql, values)
+    gymclass = GymClass.map_item(gymclass_data)
+    return gymclass
+  end
+
 
 end
