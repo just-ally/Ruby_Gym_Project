@@ -1,4 +1,6 @@
 require_relative('../db/sql_runner.rb')
+require_relative('./workout.rb')
+require_relative('./member.rb')
 
 class Booking
 
@@ -58,11 +60,26 @@ class Booking
     return result.first
   end
 
-  #SHOW MEMBER
-
-
   #SHOW WORKOUT
+  def workout()
+    sql = "SELECT workouts.* FROM workouts
+    INNER JOIN gym_classes
+    ON workouts.id = gym_classes.workout_id
+    WHERE gym_classes.id = $1"
+    values = [@gym_class_id]
+    workout_data = SqlRunner.run(sql, values)
+    workout = Workout.map_item(workout_data)
+    return workout
+  end
 
+  #SHOW MEMBER
+  def member()
+    sql = "SELECT * FROM members WHERE members.id = $1"
+    values = [@member_id]
+    member_data = SqlRunner.run(sql, values)
+    member = Member.map_item(member_data)
+    return member
+  end
 
 
 end
