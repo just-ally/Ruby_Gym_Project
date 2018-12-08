@@ -5,6 +5,7 @@ require_relative('../models/workout.rb')
 require('pry')
 
 Member.delete_all()
+Workout.delete_all()
 
 member1 = Member.new({
   'member_name' => 'Sylvester Stallone',
@@ -24,6 +25,7 @@ workout1 = Workout.new({
   'workout_name' => 'Boxfit',
   'workout_type' => 'cardio'
 })
+workout1.save()
 
 gymclass1 = GymClass.new({
   'workout_id' =>  '4',
