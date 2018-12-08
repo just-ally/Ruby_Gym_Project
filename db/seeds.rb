@@ -4,6 +4,7 @@ require_relative('../models/member.rb')
 require_relative('../models/workout.rb')
 require('pry')
 
+Booking.delete_all()
 Member.delete_all()
 GymClass.delete_all()
 Workout.delete_all()
@@ -38,9 +39,10 @@ gymclass1 = GymClass.new({
 gymclass1.save()
 
 booking1 = Booking.new({
-  'member_id' => '4',
-  'gym_class_id' => '11'
+  'member_id' => member1.id,
+  'gym_class_id' => gymclass1.id
 })
+booking1.save()
 
 binding.pry
 nil
