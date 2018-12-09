@@ -28,7 +28,19 @@ get '/members/:id' do
 end
 
 post '/members/:id/delete' do
-  @member = Member.find(params['id'].to_i)
-  @member.delete()
+  Member.delete(params[:id])
   redirect to("/members")
+end
+
+#should this be post or get??? get in previous
+post '/members/:id/edit' do
+  @member = Member.find(params[:id].to_i)
+  @member_options = ["true", "false"]
+  erb(:"members/edit")
+end
+
+post '/members/:id' do
+  @member = Member.new(params)
+  @member.update()
+  redirect to ("/members")
 end

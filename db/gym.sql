@@ -21,7 +21,7 @@ CREATE TABLE members
 CREATE TABLE gym_classes
 (
   id SERIAL PRIMARY KEY,
-  workout_id INT REFERENCES workouts(id),
+  workout_id INT REFERENCES workouts(id) ON DELETE CASCADE,
   start_date VARCHAR(255),
   start_time VARCHAR(255),
   capacity INT,
@@ -31,6 +31,6 @@ CREATE TABLE gym_classes
 CREATE TABLE bookings
 (
   id SERIAL PRIMARY KEY,
-  member_id INT REFERENCES members(id),
-  gym_class_id INT REFERENCES gym_classes(id)
+  member_id INT REFERENCES members(id) ON DELETE CASCADE,
+  gym_class_id INT REFERENCES gym_classes(id) ON DELETE CASCADE
 );
