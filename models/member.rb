@@ -70,7 +70,7 @@ class Member
     return result.first
   end
 
-  #Show all bookings for one member
+  #Show all workouts booked for one member
   def workouts()
     sql = "SELECT workouts.*
     FROM workouts

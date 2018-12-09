@@ -1,1 +1,18 @@
 <h3>Register a New Member...</h3>
+
+<form action="/members" method="post">
+
+  <label for="member_name">Name:</label>
+  <input type="text" name="member_name">
+
+  <label for="email">Email:</label>
+  <input type="text" name="email">
+
+  <label for="premium_membership">Premium Membership:</label>
+  <select name="premium_membership">
+    <option value="Yes">Yes</option>
+    <option value="No">No</option>
+  </select>
+    <input type="submit" value="Register Member">
+
+</form>
