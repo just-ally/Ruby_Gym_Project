@@ -1,4 +1,6 @@
 require_relative('../db/sql_runner.rb')
+require_relative('./workout.rb')
+require_relative('./gymclass.rb')
 
 class Member
 
@@ -66,6 +68,27 @@ class Member
   def self.map_item(member_data)
     result = Member.map_items(member_data)
     return result.first
+  end
+
+  #Show all bookings for one member
+  def workouts()
+    sql = "SELECT workouts.*
+    FROM workouts
+    INNER JOIN gym_classes
+    ON workouts.id = gym_classes.id
+    INNER JOIN bookings
+    ON bookings.gym_class_id = gym_classes.id
+    WHERE bookings.member_id = $1"
+    values = [@id]
+    workout_data = SqlRunner.run(sql, values)
+    return Workout.map_items(workout_data)
+  end
+
+  def gymclasses()
+    sql = "SELECT gym_classes.* from gym_classes INNER JOIN bookings ON bookings.gym_class_id = gym_classes.id WHERE bookings.member_id = $1"
+    values = [@id]
+    gymclass_data = SqlRunner.run(sql, values)
+    return GymClass.map_items(gymclass_data)
   end
 
 
