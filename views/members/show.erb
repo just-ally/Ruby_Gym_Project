@@ -6,3 +6,30 @@
 <% else %>
 <%= p "No" %>
 <% end %>
+
+<h3>Current Bookings:</h3>
+
+<table>
+  <tr>
+    <th>Workout</th>
+    <th></th>
+    <th>Type</th>
+    <th></th>
+    <th>Date</th>
+    <th></th>
+    <th>Time</th>
+  </tr>
+  <% for workout in @workouts %>
+  <% for gymclass in @gymclasses %>
+  <tr>
+    <td><%= workout.workout_name %></td>
+    <td>|</td>
+    <td><%= workout.workout_type %></td>
+    <td>|</td>
+    <td><%= gymclass.start_date %></td>
+    <td>|</td>
+    <td><%= gymclass.start_time %></td>
+  </tr>
+  <% end %>
+  <% end %>
+</table>
