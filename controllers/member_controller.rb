@@ -15,14 +15,20 @@ get '/members/new' do
 end
 
 post '/members' do
-  @member = Member.new(params)
-  @member.save()
-  erb(:"member/create")
+  member = Member.new(params)
+  member.save()
+  redirect to("/members")
 end
 
 get '/members/:id' do
   @member = Member.find(params['id'].to_i)
-  # @workouts = @member.workouts()
-  # @gymclasses = @member.gymclasses()
+  @workouts = @member.workouts()
+  @gymclasses = @member.gymclasses()
   erb(:"members/show")
+end
+
+post '/members/:id/delete' do
+  @member = Member.find(params['id'].to_i)
+  @member.delete()
+  redirect to("/members")
 end
