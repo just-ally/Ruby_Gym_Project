@@ -3,10 +3,28 @@
 <form action="/gymclasses/<%= @gymclass.id %>" method="post">
 
   <label for="workout_name">Workout Name:</label>
-  <input type="text" name="workout_name" value="<%= @workout.workout_name %>">
+  <select name="workout_name">
+    <% for workout in @workouts %>
+      <% if workout.workout_name == @gymclass.workout.workout_name %>
+        <option selected value="<%= workout.workout_name %>"><%= workout.workout_name %></option>
+      <% else %>
+        <option value="<%= workout.workout_name %>"><%= workout.workout_name %></option>
+      <% end %>
+    <% end %>
+  </select>
+
 
   <label for="workout_type">Workout Type:</label>
-  <input type="text" name="workout_type" value="<%= @workout.workout_type %>">
+  <select name="workout_type">
+    <% for workout in @workouts %>
+      <% if workout.workout_type == @gymclass.workout.workout_type %>
+        <option selected value="<%= workout.workout_type %>"><%= workout.workout_type %></option>
+      <% else %>
+        <option value="<%= workout.workout_type %>"><%= workout.workout_type %></option>
+      <% end %>
+    <% end %>
+  </select>
+
 
   <label for="workout_id"></label>
   <input type="hidden" name="workout_id" value="<%= @gymclass.workout_id %>">

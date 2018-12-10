@@ -36,6 +36,7 @@ end
 get '/gymclasses/:id/edit' do
   @gymclass = GymClass.find(params[:id].to_i)
   @workout = @gymclass.workout()
+  @workouts = Workout.all()
   erb(:"gymclasses/edit")
 end
 
