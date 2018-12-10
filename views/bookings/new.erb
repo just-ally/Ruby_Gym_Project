@@ -1,6 +1,8 @@
 <h1>Book a Class Here!</h1>
 
-<form action="/bookings" method="get">
+<form action="/bookings" method="post">
+
+
   <label>
     Select a member:
     <select name="member_id">
@@ -12,18 +14,14 @@
 
   <label>
     Select a class and time:
-    <select name="workout_id">
-      <% for workout in @workouts %>
+    <select name="gym_class_id">
       <% for gymclass in @gymclasses %>
-        <% if gymclass.workout_id == workout.id %>
-        <option value="<%= workout.id %>"><%= workout.workout_name %>, <%= gymclass.start_date %>, <%= gymclass.start_time %></option>
-        <% end %>
-      <% end %>
+        <option value="<%= gymclass.id %>"><%= gymclass.workout.workout_name %>, <%= gymclass.start_date %>, <%= gymclass.start_time %></option>
       <% end %>
     </select>
   </label>
 
 
-  <input type="submit" value="Make Booking">
+  <input type="submit" value="Book Class">
 
 </form>

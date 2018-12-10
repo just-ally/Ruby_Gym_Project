@@ -14,7 +14,6 @@ end
 get '/bookings/new' do
   @members = Member.all()
   @gymclasses = GymClass.all()
-  @workouts = Workout.all()
   erb(:'bookings/new')
 end
 
