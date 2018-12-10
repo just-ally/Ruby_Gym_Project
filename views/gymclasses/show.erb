@@ -2,17 +2,8 @@
 
 <h3>Members Booked:</h3>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>|</th>
-    <th>Premium Member</th>
-  </tr>
-  <% for member in @members %>
-  <tr>
-    <td><%= member.member_name %></td>
-    <td>|</td>
-    <td><%= member.premium_membership %></td>
-  </tr>
+<ul>
+  <% @gymclass.members.each do |member| %>
+  <li><%= member.member_name %></li>
   <% end %>
-</table>
+</ul>
