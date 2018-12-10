@@ -1,1 +1,18 @@
 <h1><%= @workout.workout_name %>, <%= @gymclass.start_date %></h1>
+
+<h3>Members Booked:</h3>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>|</th>
+    <th>Premium Member</th>
+  </tr>
+  <% for member in @members %>
+  <tr>
+    <td><%= member.member_name %></td>
+    <td>|</td>
+    <td><%= member.premium_membership %></td>
+  </tr>
+  <% end %>
+</table>
