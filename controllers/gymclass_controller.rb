@@ -8,6 +8,16 @@ get '/gymclasses' do
   erb(:"gymclasses/index")
 end
 
+get '/gymclasses/new' do
+  erb(:"gymclasses/new")
+end
+
+post '/gymclasses' do
+  gymclass = GymClass.new(params)
+  gymclass.save()
+  redirect to ("/gymclasses")
+end
+
 get '/gymclasses/:id' do
   @gymclass = GymClass.find(params['id'].to_i)
   @workout = @gymclass.workout()
