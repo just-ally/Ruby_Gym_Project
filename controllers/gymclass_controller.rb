@@ -1,6 +1,7 @@
 require('sinatra')
 require('sinatra/contrib/all')
 require_relative('../models/gymclass.rb')
+require_relative('../models/workout.rb')
 also_reload('../models/*')
 
 get '/gymclasses' do
@@ -9,6 +10,7 @@ get '/gymclasses' do
 end
 
 get '/gymclasses/new' do
+  @workouts = Workout.all()
   erb(:"gymclasses/new")
 end
 

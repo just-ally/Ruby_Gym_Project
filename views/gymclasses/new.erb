@@ -1,1 +1,26 @@
 <h1>Create new class!</h1>
+
+<form action="/gymclasses" method="post">
+
+  <label for="workout_id">Workout Name:</label>
+  <select name="workout_id">
+    <% for workout in @workouts %>
+    <option value="<%= workout.id %>"><%= workout.workout_name %></option>
+    <% end %>
+  </select>
+
+  <label for="start_date">Date:</label>
+  <input type="text" name="start_date">
+
+  <label for="start_time">Time:</label>
+  <input type="text" name="start_time">
+
+  <label for="capacity">Capacity:</label>
+  <input type="text" name="capacity">
+
+  <label for="peak">Peak:</label>
+  <input type="text" name="peak">
+
+<input type="submit" value="Create New Class">
+
+</form>
