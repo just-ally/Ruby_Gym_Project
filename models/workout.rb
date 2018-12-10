@@ -65,6 +65,13 @@ class Workout
     return result.first
   end
 
+  def gymclasses()
+    sql = "SELECT * FROM gym_classes WHERE gym_classes.workout_id = $1"
+    values = [@id]
+    gymclass_data = SqlRunner.run(sql, values)
+    return GymClass.map_items(gymclass_data)
+  end
+
 
 
 end

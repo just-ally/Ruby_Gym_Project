@@ -1,1 +1,7 @@
-<h1>View all Current Bookings</h1>
+<h1>View all Current Bookings:</h1>
+
+<% for booking in @bookings %>
+<ul>
+  <li><%= booking.member.member_name %> - <%= booking.workout.workout_name %>, <%= booking.gymclass.start_date %>, <%= booking.gymclass.start_time %></li>
+</ul>
+<% end %>

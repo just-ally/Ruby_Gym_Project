@@ -1,1 +1,29 @@
 <h1>Book a Class Here!</h1>
+
+<form action="/bookings" method="get">
+  <label>
+    Select a member:
+    <select name="member_id">
+      <% for member in @members %>
+      <option value="<%= member.id %>"><%= member.member_name %></option>
+      <% end %>
+    </select>
+  </label>
+
+  <label>
+    Select a class and time:
+    <select name="workout_id">
+      <% for workout in @workouts %>
+      <% for gymclass in @gymclasses %>
+        <% if gymclass.workout_id == workout.id %>
+        <option value="<%= workout.id %>"><%= workout.workout_name %>, <%= gymclass.start_date %>, <%= gymclass.start_time %></option>
+        <% end %>
+      <% end %>
+      <% end %>
+    </select>
+  </label>
+
+
+  <input type="submit" value="Make Booking">
+
+</form>
