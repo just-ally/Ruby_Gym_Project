@@ -7,11 +7,3 @@ get '/gymclass' do
   @gymclasses = GymClass.all()
   erb(:"gymclasses/index")
 end
-
-
-
-
-# @workouts = []
-# for gymclass in @gymclasses
-#   @workouts << gymclass.workout
-# end
