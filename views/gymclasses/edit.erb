@@ -1,0 +1,25 @@
+<h1>EDIT A CLASS HERE</h1>
+
+<form action="/gymclasses/<%= @gymclass.id %>" method="post">
+
+  <label for="workout_name">Workout Name:</label>
+  <input type="text" name="workout_name" value="<%= @workout.workout_name %>">
+
+  <label for="workout_type">Workout Type:</label>
+  <input type="text" name="workout_type" value="<%= @workout.workout_type %>">
+
+  <label for="workout_id"></label>
+  <input type="hidden" name="workout_id" value="<%= @gymclass.workout_id %>">
+
+  <label for="start_date">Date:</label>
+  <input type="text" name="start_date" value="<%= @gymclass.start_date %>">
+
+  <label for="start_time">Time:</label>
+  <input type="text" name="start_time" value="<%= @gymclass.start_time %>">
+
+  <label for="capacity">Capacity:</label>
+  <input type="text" name="capacity" value="<%= @gymclass.capacity %>">
+
+  <input type="submit" value="Update Class Details">
+
+</form>

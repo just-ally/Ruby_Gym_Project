@@ -9,6 +9,8 @@
     <th>Date</th>
     <th></th>
     <th>Time</th>
+    <th></th>
+    <th>Capacity</th>
   </tr>
   <% for gymclass in @gymclasses %>
   <tr>
@@ -19,6 +21,8 @@
     <td><%= gymclass.start_date %></td>
     <td>|</td>
     <td><%= gymclass.start_time %></td>
+    <td>|</td>
+    <td><%= gymclass.capacity %></td>
     <td><form action="/gymclasses/<%= gymclass.id %>/edit" method="GET">
       <input type="submit" value="Edit Class">
     </form>

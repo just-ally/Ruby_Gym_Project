@@ -77,6 +77,10 @@ gymclass4 = GymClass.new({
 })
 gymclass4.save()
 
+gymclass1.capacity = 8
+gymclass1.update()
+
+
 booking1 = Booking.new({
   'member_id' => member1.id,
   'gym_class_id' => gymclass1.id
