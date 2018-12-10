@@ -14,7 +14,7 @@
   </tr>
   <% for gymclass in @gymclasses %>
   <tr>
-    <td><%= gymclass.workout.workout_name %></td>
+    <td><a href="/gymclasses/<%= gymclass.id %>"><%= gymclass.workout.workout_name %></a></td>
     <td>|</td>
     <td><%= gymclass.workout.workout_type %></td>
     <td>|</td>
