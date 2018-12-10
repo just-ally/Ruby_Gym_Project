@@ -53,9 +53,9 @@ class Member
   end
 
   #DELETE by id
-  def self.delete(id)
+  def delete()
     sql = "DELETE FROM members WHERE id = $1"
-    values = [id]
+    values = [@id]
     SqlRunner.run(sql, values)
   end
 
@@ -75,7 +75,7 @@ class Member
     sql = "SELECT workouts.*
     FROM workouts
     INNER JOIN gym_classes
-    ON workouts.id = gym_classes.id
+    ON workouts.id = gym_classes.workout_id
     INNER JOIN bookings
     ON bookings.gym_class_id = gym_classes.id
     WHERE bookings.member_id = $1"

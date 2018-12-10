@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner.rb')
+require_relative('./workout.rb')
 
 class GymClass
 
@@ -68,8 +69,13 @@ class GymClass
     return result.first
   end
 
-
-
+  def workout()
+    sql = "SELECT * FROM workouts WHERE workouts.id = $1"
+    values = [@workout_id]
+    workout_data = SqlRunner.run(sql, values)
+    workout = Workout.map_item(workout_data)
+    return workout
+  end
 
 
 end

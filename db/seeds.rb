@@ -25,9 +25,21 @@ member2.save()
 
 workout1 = Workout.new({
   'workout_name' => 'Boxfit',
-  'workout_type' => 'cardio'
+  'workout_type' => 'Cardio'
 })
 workout1.save()
+
+workout2 = Workout.new({
+  'workout_name' => 'Spin',
+  'workout_type' => 'Endurance & High Intensity'
+})
+workout2.save()
+
+workout3 = Workout.new({
+  'workout_name' => 'Yoga',
+  'workout_type' => 'Flexibility'
+})
+workout3.save()
 
 gymclass1 = GymClass.new({
   'workout_id' =>  workout1.id,
@@ -37,6 +49,33 @@ gymclass1 = GymClass.new({
   'peak' => 'false'
 })
 gymclass1.save()
+
+gymclass2 = GymClass.new({
+  'workout_id' =>  workout2.id,
+  'start_date' => '13-Dec-2018',
+  'start_time' => '16.00',
+  'capacity' => '12',
+  'peak' => 'true'
+})
+gymclass2.save()
+
+gymclass3 = GymClass.new({
+  'workout_id' =>  workout3.id,
+  'start_date' => '16-Dec-2018',
+  'start_time' => '12.00',
+  'capacity' => '3',
+  'peak' => 'true'
+})
+gymclass3.save()
+
+gymclass4 = GymClass.new({
+  'workout_id' =>  workout1.id,
+  'start_date' => '17-Dec-2018',
+  'start_time' => '20.00',
+  'capacity' => '5',
+  'peak' => 'false'
+})
+gymclass4.save()
 
 booking1 = Booking.new({
   'member_id' => member1.id,

@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS bookings;
-DROP TABLE IF EXISTS members;
 DROP TABLE IF EXISTS gym_classes;
 DROP TABLE IF EXISTS workouts;
+DROP TABLE IF EXISTS members;
 
 CREATE TABLE workouts
 (
