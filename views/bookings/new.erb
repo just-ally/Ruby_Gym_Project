@@ -1,8 +1,15 @@
 <h1>Book a Class Here:</h1>
 
-<%= @member.premium_membership %>
+<p>Premium Member: <%= @member.premium_membership %></p>
+
+<%# Logic needs to be re-factored and moved from erb page!! %>
 
 <% if @member.premium_membership == "Yes" %>
+
+<p>Classes available to book: Peak and Off-Peak (if not full)</p>
+<br>
+<hr>
+<br>
 
 <form action="/bookings" method="post">
 
@@ -25,6 +32,11 @@
 </form>
 
 <% else %>
+
+<p>Classes available to book: Off-peak only (if not full)</p>
+<br>
+<hr>
+<br>
 
 <form action="/bookings" method="post">
 
