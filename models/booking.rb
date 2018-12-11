@@ -90,5 +90,11 @@ class Booking
     return gymclass
   end
 
+  #find gymclass
+  #check current capacity/bookings
+  #if full, return string
+  #if space, save booking
+
+
 
 end

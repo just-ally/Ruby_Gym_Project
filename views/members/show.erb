@@ -1,12 +1,7 @@
 <h1><%= @member.member_name %></h1>
 
 <p>Premium Member:</p>
-<% if @member.premium_membership == "t" %>
-<%= p "Yes" %>
-<% else %>
-<%= p "No" %>
-<% end %>
-
+<%= @member.premium_membership %>
 
 <h3>Current Bookings:</h3>
 

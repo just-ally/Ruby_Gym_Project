@@ -85,5 +85,14 @@ class GymClass
     return Member.map_items(member_data)
   end
 
+  def check_space_available()
+    booked = members.count
+    if booked < @capacity
+      return true
+    else
+      return false
+    end
+  end
+
 
 end

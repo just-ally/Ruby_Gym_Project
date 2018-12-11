@@ -15,7 +15,11 @@
     Select a class and time:
     <select name="gym_class_id">
       <% for gymclass in @gymclasses %>
-        <option value="<%= gymclass.id %>"><%= gymclass.workout.workout_name %>, <%= gymclass.start_date %>, <%= gymclass.start_time %></option>
+        <% if gymclass.check_space_available == true %>
+          <option value="<%= gymclass.id %>"><%= gymclass.workout.workout_name %>, <%= gymclass.start_date %>, <%= gymclass.start_time %></option>
+        <% else %>
+          <option value="<%= gymclass.id %>" disabled><%= gymclass.workout.workout_name %>, <%= gymclass.start_date %>, <%= gymclass.start_time %></option>
+        <% end %>
       <% end %>
     </select>
   </label>
