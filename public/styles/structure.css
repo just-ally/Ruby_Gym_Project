@@ -3,6 +3,7 @@ body {
   background-size: 100%;
   font-family: 'Cardo', serif;
   color: white;
+  padding-left: 10px;
 }
 
 h1, h3 {
@@ -12,8 +13,22 @@ h1, h3 {
  color: #ffce00;
 }
 
-.navbar a {
+.navbar {
   color: white;
-  display: flex;
-  flex-direction: row;
+  padding: 10px;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.navbar a {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+a, a:link {
+  color: yellow;
+}
+
+a:hover {
+  color: white;
 }

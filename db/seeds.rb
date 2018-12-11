@@ -9,28 +9,28 @@ Member.delete_all()
 GymClass.delete_all()
 Workout.delete_all()
 
-member1 = Member.new({ 'member_name' => 'Sylvester Stallone', 'email' => 'sly@mail.com', 'premium_membership' => 'true' })
+member1 = Member.new({ 'member_name' => 'Sylvester Stallone', 'email' => 'sly@mail.com', 'premium_membership' => 't' })
 member1.save()
 
-member2 = Member.new({ 'member_name' => 'Dolph Lundgren', 'email' => 'DL@mail.com', 'premium_membership' => 'false' })
+member2 = Member.new({ 'member_name' => 'Dolph Lundgren', 'email' => 'DL@mail.com', 'premium_membership' => 'f' })
 member2.save()
 
-member3 = Member.new({ 'member_name' => 'Jason Statham', 'email' => 'jay@mail.com', 'premium_membership' => 'false' })
+member3 = Member.new({ 'member_name' => 'Jason Statham', 'email' => 'jay@mail.com', 'premium_membership' => 'f' })
 member3.save()
 
-member4 = Member.new({ 'member_name' => 'Jet Li', 'email' => 'jet@mail.com', 'premium_membership' => 'true' })
+member4 = Member.new({ 'member_name' => 'Jet Li', 'email' => 'jet@mail.com', 'premium_membership' => 't' })
 member4.save()
 
-member5 = Member.new({ 'member_name' => 'Terry Crews', 'email' => 'terrylovesyoghurt@mail.com', 'premium_membership' => 'true' })
+member5 = Member.new({ 'member_name' => 'Terry Crews', 'email' => 'terrylovesyoghurt@mail.com', 'premium_membership' => 't' })
 member5.save()
 
-member6 = Member.new({ 'member_name' => 'Mickey Rourke', 'email' => 'mickey@mail.com', 'premium_membership' => 'false' })
+member6 = Member.new({ 'member_name' => 'Mickey Rourke', 'email' => 'mickey@mail.com', 'premium_membership' => 'f' })
 member6.save()
 
-member7 = Member.new({ 'member_name' => 'Randy Couture', 'email' => 'randy_randy@mail.com', 'premium_membership' => 'false' })
+member7 = Member.new({ 'member_name' => 'Randy Couture', 'email' => 'randy_randy@mail.com', 'premium_membership' => 'f' })
 member7.save()
 
-member8 = Member.new({ 'member_name' => 'Steve Austin', 'email' => 'stone_cold@mail.com', 'premium_membership' => 'true' })
+member8 = Member.new({ 'member_name' => 'Steve Austin', 'email' => 'stone_cold@mail.com', 'premium_membership' => 't' })
 member8.save()
 
 

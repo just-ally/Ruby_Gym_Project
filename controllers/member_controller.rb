@@ -22,7 +22,6 @@ end
 
 get '/members/:id' do
   @member = Member.find(params['id'].to_i)
-  @workouts = @member.workouts()
   @gymclasses = @member.gymclasses()
   erb(:"members/show")
 end
@@ -36,7 +35,7 @@ end
 #should this be post or get??? get in previous
 get '/members/:id/edit' do
   @member = Member.find(params[:id].to_i)
-  @member_options = ["true", "false"]
+  @member_options = ["Yes", "No"]
   erb(:"members/edit")
 end
 
