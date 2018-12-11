@@ -11,10 +11,15 @@ get '/bookings' do
   erb(:"bookings/index")
 end
 
-get '/bookings/new' do
-  @members = Member.all()
+# get '/bookings/new' do
+#   @members = Member.all()
+#   erb(:'bookings/select')
+# end
+
+get '/bookings/:id/new' do
   @gymclasses = GymClass.all()
-  erb(:'bookings/new')
+  @member = Member.find(params['id'].to_i)
+  erb (:'bookings/new')
 end
 
 post '/bookings' do

@@ -1,15 +1,13 @@
-<h1>Book a Class Here!</h1>
+<h1>Book a Class Here:</h1>
+
+<%= @member.premium_membership %>
+
+<% if @member.premium_membership == "Yes" %>
 
 <form action="/bookings" method="post">
 
-  <label>
-    Select a member:
-    <select name="member_id">
-      <% for member in @members %>
-      <option value="<%= member.id %>"><%= member.member_name %></option>
-      <% end %>
-    </select>
-  </label>
+  <label for="member_id"></label>
+  <input type="hidden" name="member_id" value="<%= @member.id %>">
 
   <label>
     Select a class and time:
@@ -23,8 +21,33 @@
       <% end %>
     </select>
   </label>
-
-
   <input type="submit" value="Book Class">
-
 </form>
+
+<% else %>
+
+<form action="/bookings" method="post">
+
+  <label for="member_id"></label>
+  <input type="hidden" name="member_id" value="<%= @member.id %>">
+
+  <label>
+    Select a class and time:
+    <select name="gym_class_id">
+      <% for gymclass in @gymclasses %>
+        <% if gymclass.peak == "f" %>
+          <% if gymclass.check_space_available == true %>
+            <option value="<%= gymclass.id %>"><%= gymclass.workout.workout_name %>, <%= gymclass.start_date %>, <%= gymclass.start_time %></option>
+          <% else %>
+            <option value="<%= gymclass.id %>" disabled><%= gymclass.workout.workout_name %>, <%= gymclass.start_date %>, <%= gymclass.start_time %></option>
+          <% end %>
+        <% else %>
+          <option value="<%= gymclass.id %>" disabled><%= gymclass.workout.workout_name %>, <%= gymclass.start_date %>, <%= gymclass.start_time %></option>
+        <% end %>
+      <% end %>
+    </select>
+  </label>
+  <input type="submit" value="Book Class">
+</form>
+
+<% end %>

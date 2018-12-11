@@ -64,7 +64,7 @@ workout8.save()
 gymclass1 = GymClass.new({ 'workout_id' =>  workout1.id, 'start_date' => '14-Dec-2018', 'start_time' => '19.00', 'capacity' => '3', 'peak' => 'false' })
 gymclass1.save()
 
-gymclass2 = GymClass.new({ 'workout_id' =>  workout2.id, 'start_date' => '15-Dec-2018', 'start_time' => '16.00', 'capacity' => '12', 'peak' => 'true' })
+gymclass2 = GymClass.new({ 'workout_id' =>  workout2.id, 'start_date' => '15-Dec-2018', 'start_time' => '20.00', 'capacity' => '12', 'peak' => 'false' })
 gymclass2.save()
 
 gymclass3 = GymClass.new({ 'workout_id' =>  workout3.id, 'start_date' => '16-Dec-2018', 'start_time' => '12.00', 'capacity' => '3', 'peak' => 'true' })
