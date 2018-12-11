@@ -61,7 +61,7 @@ workout8.save()
 
 
 
-gymclass1 = GymClass.new({ 'workout_id' =>  workout1.id, 'start_date' => '14-Dec-2018', 'start_time' => '19.00', 'capacity' => '5', 'peak' => 'false' })
+gymclass1 = GymClass.new({ 'workout_id' =>  workout1.id, 'start_date' => '14-Dec-2018', 'start_time' => '19.00', 'capacity' => '3', 'peak' => 'false' })
 gymclass1.save()
 
 gymclass2 = GymClass.new({ 'workout_id' =>  workout2.id, 'start_date' => '15-Dec-2018', 'start_time' => '16.00', 'capacity' => '12', 'peak' => 'true' })
@@ -143,6 +143,9 @@ booking15.save()
 
 booking16 = Booking.new({ 'member_id' => member2.id, 'gym_class_id' => gymclass10.id })
 booking16.save()
+
+booking17 = Booking.new({ 'member_id' => member7.id, 'gym_class_id' => gymclass1.id })
+booking17.save()
 
 binding.pry
 nil
