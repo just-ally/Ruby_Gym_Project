@@ -8,14 +8,8 @@ also_reload('../models/*')
 
 get '/bookings' do
   @bookings = Booking.all()
-  # @bookings_sorted = bookings.sort_by! {|booking| booking[:member_id]}
   erb(:"bookings/index")
 end
-
-# get '/bookings/new' do
-#   @members = Member.all()
-#   erb(:'bookings/select')
-# end
 
 get '/bookings/:id/new' do
   @gymclasses = GymClass.all()
