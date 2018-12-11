@@ -23,7 +23,7 @@ class Booking
 
   #READ all
   def self.all()
-    sql = "SELECT * FROM bookings"
+    sql = "SELECT * FROM bookings ORDER BY member_id ASC"
     booking_data = SqlRunner.run(sql)
     return Booking.map_items(booking_data)
   end

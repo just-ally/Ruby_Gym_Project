@@ -4,12 +4,13 @@
   <tr>
     <th>Name</th>
     <th>Email</th>
-    <!-- <th>Premium Member?</th> -->
+    <th>Premium Member?</th>
   </tr>
   <% for member in @members %>
   <tr>
     <td><a href="/members/<%= member.id %>"><%= member.member_name %></a></td>
     <td><%= member.email %></td>
+    <td><%= member.premium_membership %></td>
 
     <td> <form action="/bookings/<%= member.id %>/new" method="GET">
     <input type="submit" value="Book a Class">
