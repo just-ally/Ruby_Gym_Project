@@ -22,3 +22,9 @@ post '/bookings' do
   booking.save()
   redirect to ("/bookings")
 end
+
+post '/bookings/:id/delete' do
+  @booking = Booking.find(params['id'])
+  @booking.delete
+  redirect to ("/bookings")
+end
