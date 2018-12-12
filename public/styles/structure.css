@@ -1,10 +1,10 @@
 body {
   background: black url('/images/expendables.jpg');
-  background-size: 100%;
+  background-size: cover;
   font-family: 'Oswald', sans-serif;
   color: white;
   padding-left: 10px;
-  font-size: 18px;
+  font-size: 17px;
 }
 
 h1, h2, h3 {

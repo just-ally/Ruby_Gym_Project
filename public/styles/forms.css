@@ -1,0 +1,14 @@
+label, select, option, input {
+  font-family: inherit;
+}
+
+input, select {
+  background-color: antiquewhite;
+  width: 150px;
+  font-size: 15px;
+}
+
+select {
+  background-color: antiquewhite;
+  width: 150px;
+}
