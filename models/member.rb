@@ -25,7 +25,7 @@ class Member
 
   # READ all
   def self.all()
-    sql = "SELECT * FROM members"
+    sql = "SELECT * FROM members ORDER BY member_name"
     member_data = SqlRunner.run(sql)
     return Member.map_items(member_data)
   end
@@ -85,7 +85,7 @@ class Member
   end
 
   def gymclasses()
-    sql = "SELECT gym_classes.* from gym_classes INNER JOIN bookings ON bookings.gym_class_id = gym_classes.id WHERE bookings.member_id = $1"
+    sql = "SELECT gym_classes.* from gym_classes INNER JOIN bookings ON bookings.gym_class_id = gym_classes.id WHERE bookings.member_id = $1 ORDER BY gym_classes.start_date"
     values = [@id]
     gymclass_data = SqlRunner.run(sql, values)
     return GymClass.map_items(gymclass_data)

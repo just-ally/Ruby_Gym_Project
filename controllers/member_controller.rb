@@ -32,7 +32,6 @@ post '/members/:id/delete' do
   redirect to("/members")
 end
 
-#should this be post or get??? get in previous
 get '/members/:id/edit' do
   @member = Member.find(params[:id].to_i)
   @member_options = ["Yes", "No"]

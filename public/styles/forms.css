@@ -4,11 +4,6 @@ label, select, option, input {
 
 input, select {
   background-color: antiquewhite;
-  width: 150px;
+  width: 180px;
   font-size: 15px;
-}
-
-select {
-  background-color: antiquewhite;
-  width: 150px;
 }

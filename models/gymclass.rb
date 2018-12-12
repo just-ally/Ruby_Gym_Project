@@ -26,7 +26,7 @@ class GymClass
 
   #READ all
   def self.all()
-    sql = "SELECT * FROM gym_classes"
+    sql = "SELECT * FROM gym_classes ORDER BY start_date ASC, start_time"
     gymclass_data = SqlRunner.run(sql)
     return GymClass.map_items(gymclass_data)
   end
@@ -94,5 +94,32 @@ class GymClass
     end
   end
 
+  def self.gymclass_all_space()
+    all_classes = GymClass.all()
+    gymclass_array = []
+    for gymclass in all_classes
+      if gymclass.check_space_available == true
+        gymclass_array << gymclass
+      end
+    end
+  end
+
+  def gymclass_all_nospace()
+  end
+
+  def self.gymclass_offpeak_space()
+    all_classes = GymClass.all()
+    gymclass_array = []
+    for gymclass in all_classes
+      if gymclass.check_space_available == true
+        if gymclass.peak == "f"
+          gymclass_array << gymclass
+        end
+      end
+    end
+  end
+
+  def gymclass_offpeak_nospace()
+  end
 
 end

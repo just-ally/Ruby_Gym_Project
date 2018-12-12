@@ -2,18 +2,17 @@
   border: solid 1px;
   border-color: #ffce00;
   background-color: antiquewhite;
-  padding: 4px 13px;
+  padding: 4px 1px;
   margin: 4px;
   font-size: 14px;
   font-weight: bold;
   font-family: inherit;
   text-transform: uppercase;
+  width: 130px;
 }
 
 .btn:hover {
   background-color: peachpuff;
-  border: solid 2px;
-  border-color: #ffce00;
 }
 
 .btn--confirm {
