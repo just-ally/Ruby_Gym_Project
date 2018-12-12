@@ -10,13 +10,10 @@
 
   <label for="premium_membership">Premium Membership:</label>
   <select name="premium_membership">
-    <% for member_option in @member_options %>
-      <% if member_option == @member.premium_membership %>
-        <option selected value="<%= member_option %>"><%= member_option %></option>
-      <% else %>
-        <option value="<%= member_option %>"><%= member_option %></option>
-      <% end %>
-    <% end %>
+    <option
+      <%= "selected" if @member.premium_membership %> value="true">Yes</option>
+    <option
+      <%= "selected" if !@member.premium_membership %> value="false">No</option>
   </select>
 
   <input class="btn btn--edit" type="submit" value="Update Member">

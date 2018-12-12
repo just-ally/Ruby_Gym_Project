@@ -34,7 +34,7 @@ end
 
 get '/members/:id/edit' do
   @member = Member.find(params[:id].to_i)
-  @member_options = ["Yes", "No"]
+  @member_options = ["true", "false"]
   erb(:"members/edit")
 end
 

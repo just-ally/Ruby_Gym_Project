@@ -16,7 +16,13 @@
   <tr>
     <td><a href="/members/<%= member.id %>"><%= member.member_name %></a></td>
     <td><%= member.email %></td>
-    <td><%= member.premium_membership %></td>
+    <td>
+      <% if member.premium_membership %>
+         Yes
+         <% else %>
+         No
+         <% end %>
+    </td>
 
     <td> <form action="/bookings/<%= member.id %>/new" method="GET">
     <input class="btn btn--confirm" type="submit" value="Book a Class">

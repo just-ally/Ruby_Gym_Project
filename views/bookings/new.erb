@@ -1,10 +1,11 @@
-<h2>Book a Class Here:</h2>
+<h2>Book a Class Here</h2>
 
-<p>Premium Member: <%= @member.premium_membership %></p>
+<p>Premium Member: <% if @member.premium_membership %> Yes
+  <% else %> No <% end %></p>
 
 <%# Logic needs to be re-factored and moved from erb page!! %>
 
-<% if @member.premium_membership == "Yes" %>
+<% if @member.premium_membership == true %>
 
 <p>Classes available to book: Peak and Off-Peak (if not full)</p>
 <br>
@@ -47,7 +48,7 @@
     Select a class and time:
     <select name="gym_class_id">
       <% for gymclass in @gymclasses %>
-        <% if gymclass.peak == "f" %>
+        <% if gymclass.peak == false %>
           <% if gymclass.check_space_available == true %>
             <option value="<%= gymclass.id %>"><%= gymclass.workout.workout_name %>, <%= gymclass.start_date %>, <%= gymclass.start_time %></option>
           <% else %>

@@ -11,7 +11,7 @@ class Member
     @id = options['id'].to_i() if options['id']
     @member_name = options['member_name']
     @email = options['email']
-    @premium_membership = options['premium_membership'] == 't' ? "Yes" : "No"
+    @premium_membership = options['premium_membership'] 
   end
 
   # CREATE
