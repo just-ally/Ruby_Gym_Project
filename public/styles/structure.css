@@ -1,28 +1,42 @@
 body {
   background: black url('/images/expendables.jpg');
   background-size: 100%;
-  font-family: 'Cardo', serif;
+  font-family: 'Oswald', sans-serif;
   color: white;
   padding-left: 10px;
+  font-size: 18px;
 }
 
-h1, h3 {
- font-family: 'Oswald', sans-serif;
- text-transform: uppercase;
- /* font-size: 3em; */
- color: #ffce00;
+h1, h2, h3 {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  color: #ffce00;
+}
+
+h1 {
+ font-size: 60px;
+ text-shadow: 10px 10px darkred;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 30px;
 }
 
 .navbar {
   color: white;
-  padding: 10px;
+  padding: 10px ;
   padding-bottom: 20px;
   text-transform: uppercase;
+  margin: 15px;
 }
 
 .navbar a {
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 a, a:link {
@@ -31,4 +45,8 @@ a, a:link {
 
 a:hover {
   color: white;
+}
+
+ul {
+  list-style-type: none;
 }

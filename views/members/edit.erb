@@ -1,3 +1,5 @@
+<h2>Update Member Details</h2>
+
 <form action="/members/<%= @member.id %>" method="post">
 
   <label for="member_name">Name:</label>
@@ -17,5 +19,5 @@
     <% end %>
   </select>
 
-  <input type="submit" value="Update Member">
+  <input class="btn btn--edit" type="submit" value="Update Member">
 </form>

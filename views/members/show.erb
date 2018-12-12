@@ -1,25 +1,19 @@
-<h1><%= @member.member_name %></h1>
+<h2><%= @member.member_name %></h2>
 
 <h3>Current Bookings:</h3>
 
 <table>
   <tr>
     <th>Workout</th>
-    <th></th>
     <th>Type</th>
-    <th></th>
     <th>Date</th>
-    <th></th>
     <th>Time</th>
   </tr>
   <% for gymclass in @gymclasses %>
   <tr>
     <td><%= gymclass.workout.workout_name %></td>
-    <td>|</td>
     <td><%= gymclass.workout.workout_type %></td>
-    <td>|</td>
     <td><%= gymclass.start_date %></td>
-    <td>|</td>
     <td><%= gymclass.start_time %></td>
   </tr>
   <% end %>

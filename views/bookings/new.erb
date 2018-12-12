@@ -1,4 +1,4 @@
-<h1>Book a Class Here:</h1>
+<h2>Book a Class Here:</h2>
 
 <p>Premium Member: <%= @member.premium_membership %></p>
 
@@ -28,7 +28,7 @@
       <% end %>
     </select>
   </label>
-  <input type="submit" value="Book Class">
+  <input class="btn btn--confirm" type="submit" value="Book Class">
 </form>
 
 <% else %>
@@ -59,7 +59,7 @@
       <% end %>
     </select>
   </label>
-  <input type="submit" value="Book Class">
+  <input class="btn btn--confirm" type="submit" value="Book Class">
 </form>
 
 <% end %>

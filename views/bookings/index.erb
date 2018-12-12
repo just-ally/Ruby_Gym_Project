@@ -1,11 +1,19 @@
-<h1>View all Current Bookings:</h1>
+<h2>View all Current Bookings:</h2>
 
-<% for booking in @bookings %>
-<ul>
-  <li><%= booking.member.member_name %> - <%= booking.workout.workout_name %>, <%= booking.gymclass.start_date %>, <%= booking.gymclass.start_time %> </li>
-  <li><form action="/bookings/<%= booking.id %>/delete" method="POST">
-    <input type="submit" value="Delete">
+<table>
+  <tr>
+    <th>Member</th>
+    <th>Class Booked</th>
+  </tr>
+  <% for booking in @bookings %>
+  <tr>
+    <td><%= booking.member.member_name %></td>
+    <td><%= booking.workout.workout_name %>, <%= booking.gymclass.start_date %>, <%= booking.gymclass.start_time %></td>
+  <td><form action="/bookings/<%= booking.id %>/delete" method="POST">
+  <input class="btn btn--delete" type="submit" value="Cancel Booking">
   </form>
-  </li>
-</ul>
+  </td>
+</tr>
 <% end %>
+
+</table>

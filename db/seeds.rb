@@ -111,8 +111,8 @@ booking4.save()
 booking5 = Booking.new({ 'member_id' => member5.id, 'gym_class_id' => gymclass4.id })
 booking5.save()
 
-booking6 = Booking.new({ 'member_id' => member6.id, 'gym_class_id' => gymclass6.id })
-booking6.save()
+# booking6 = Booking.new({ 'member_id' => member6.id, 'gym_class_id' => gymclass6.id })
+# booking6.save()
 
 booking7 = Booking.new({ 'member_id' => member7.id, 'gym_class_id' => gymclass11.id })
 booking7.save()
@@ -129,8 +129,8 @@ booking10.save()
 booking11 = Booking.new({ 'member_id' => member3.id, 'gym_class_id' => gymclass3.id })
 booking11.save()
 
-booking12 = Booking.new({ 'member_id' => member7.id, 'gym_class_id' => gymclass4.id })
-booking12.save()
+# booking12 = Booking.new({ 'member_id' => member7.id, 'gym_class_id' => gymclass5.id })
+# booking12.save()
 
 booking13 = Booking.new({ 'member_id' => member6.id, 'gym_class_id' => gymclass8.id })
 booking13.save()
